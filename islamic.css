@@ -1,0 +1,64 @@
+.islamic-view { width: 100%; max-width: 820px; margin-inline: auto; display: grid; gap: 18px; }
+.islamic-view h2 { margin: 4px 0 12px; font-family: var(--font-display); font-size: clamp(22px, 5vw, 28px); letter-spacing: -.03em; }
+.islamic-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.location-mark { color: var(--accent); font-family: var(--font-mono); font-size: 12px; text-align: right; line-height: 1.8; }
+.prayer-panel { border-top: 4px solid var(--accent); }
+.prayer-times { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
+.prayer-time { padding: 16px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid transparent; }
+.prayer-time strong { display: block; font-family: var(--font-mono); font-size: clamp(21px, 5vw, 30px); font-weight: 500; margin-top: 6px; }
+.prayer-time span { color: var(--muted); font-size: 12px; }
+.prayer-time.is-next { border-color: var(--accent); }
+.prayer-time.is-next span { color: var(--accent); font-weight: 700; }
+.prayer-source { font-size: 11px; max-width: 65ch; }
+.dhikr { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.dhikr:last-child { border-bottom: 0; padding-bottom: 0; }
+.dhikr .arabic { font-family: 'Amiri', 'Traditional Arabic', 'Noto Naskh Arabic', serif; font-size: clamp(25px, 6vw, 34px); line-height: 2; margin: 0 0 10px; color: var(--accent); }
+.dhikr p { margin: 5px 0; }
+.dhikr small { display: block; color: var(--muted); line-height: 1.7; }
+.mushaf-count { white-space: nowrap; color: var(--muted); font-size: 12px; }
+.mushaf-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 20px 0 12px; }
+.mushaf-controls label { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.mushaf-controls input { width: 78px; padding: 10px; }
+.mushaf-controls button:disabled { opacity: .4; cursor: default; }
+.mushaf-paper { background: #fffef8; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; min-height: 100px; }
+.mushaf-paper[aria-busy="true"] { min-height: 300px; background: linear-gradient(110deg, var(--surface-2), var(--surface), var(--surface-2)); }
+.mushaf-paper img { display: block; width: 100%; height: auto; }
+.islamic-view a { color: var(--accent); text-underline-offset: 3px; }
+.islamic-view button:focus-visible, .islamic-view input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 420px) { .prayer-times { gap: 6px; } .prayer-time { padding: 12px 8px; } .mushaf-count { display: none; } .mushaf-controls { gap: 8px; } .mushaf-controls .btn { padding-inline: 10px; font-size: 12px; } }
+/* Independent disclosure controls keep long reading sections compact. */
+.islamic-view details > summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; cursor: pointer; list-style: none; }
+.islamic-view details > summary::-webkit-details-marker { display: none; }
+.islamic-view details > summary .islamic-heading { flex: 1; }
+.islamic-view details > summary h2 { margin-bottom: 4px; }
+.islamic-view details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; border-radius: 4px; }
+.part-chevron { width: 9px; height: 9px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); flex-shrink: 0; margin: 0 4px 6px; }
+.islamic-view details[open] > summary .part-chevron { transform: rotate(225deg); margin-bottom: -4px; }
+.islamic-part-body { padding-top: 12px; }
+.prayer-time strong { font-size: clamp(15px, 4vw, 23px); white-space: nowrap; }
+.adhkar-panel .dhikr { padding-block: 12px; font-size: 12px; }
+.adhkar-panel .dhikr .arabic { font-size: clamp(19px, 4.5vw, 23px); line-height: 1.9; margin-bottom: 6px; }
+.adhkar-panel .dhikr small { font-size: 11px; }
+.dhikr-remove { font-size: 11px; margin-top: 6px; padding: 5px 0; }
+.dhikr-remove:disabled { opacity: .4; cursor: default; }
+.adhkar-form { margin-top: 16px; }
+.adhkar-form fieldset { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 12px; min-width: 0; }
+.adhkar-form legend { padding-inline: 6px; font-size: 12px; font-weight: 700; }
+.adhkar-form label { display: grid; gap: 5px; font-size: 12px; }
+.adhkar-form input, .adhkar-form textarea { width: 100%; font: inherit; font-size: 14px; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+.adhkar-form textarea { resize: vertical; }
+.adhkar-form button { justify-self: start; font-size: 12px; }
+.adhkar-form fieldset:disabled { opacity: .55; }
+.adhkar-form textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.prayer-countdown { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 16px; border-radius: 12px; border: 1px solid var(--accent); background: var(--surface-2); }
+.next-prayer-name, .next-prayer-time, .countdown-caption { display: block; }
+.next-prayer-name { color: var(--accent); font-size: 12px; font-weight: 700; }
+.next-prayer-time { margin-top: 5px; font-family: var(--font-mono); font-size: 14px; }
+#nextPrayerRemaining { font-family: var(--font-mono); font-size: clamp(22px, 6vw, 34px); font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.countdown-caption { color: var(--muted); font-size: 11px; text-align: right; }
+#prayerStatus:empty { display: none; }
+#adhkarList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-block: 16px; }
+.adhkar-panel #adhkarList .dhikr { display: flex; flex-direction: column; min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); overflow-wrap: anywhere; }
+#adhkarList .dhikr-remove { align-self: flex-start; margin-top: auto; padding-top: 12px; }
+@media (max-width: 480px) { #adhkarList { grid-template-columns: minmax(0, 1fr); } .prayer-countdown { padding: 12px; } }
